@@ -3,6 +3,8 @@ import streamlit as st
 import time
 from openai import OpenAI
 
+st.set_page_config(page_title='Chat by Yedidya', page_icon="💬")
+
 # Initialize password_attempt in session state
 if 'password_attempt' not in st.session_state:
     st.session_state.password_attempt = None
