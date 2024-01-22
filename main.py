@@ -5,7 +5,7 @@ import time
 from openai import OpenAI
 from PIL import Image
 
-im = Image.open("favicon.ico")
+im = Image.open(".\favicon.ico")
 st.set_page_config(page_title='Chat by Yedidya', page_icon=im)
 
 # Initialize password_attempt in session state
