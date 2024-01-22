@@ -1,4 +1,3 @@
-favicon.ico
 # Importing required packages
 import streamlit as st
 import time
