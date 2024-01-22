@@ -3,10 +3,8 @@ favicon.ico
 import streamlit as st
 import time
 from openai import OpenAI
-from PIL import Image
 
-im = Image.open(".\favicon.ico")
-st.set_page_config(page_title='Chat by Yedidya', page_icon=im)
+st.set_page_config(page_title='Chat by Yedidya', page_icon="🦈")
 
 # Initialize password_attempt in session state
 if 'password_attempt' not in st.session_state:
