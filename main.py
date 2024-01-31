@@ -34,7 +34,7 @@ else:
     if password_attempt == st.secrets["amit_pass"]:
         api_key = st.secrets["amit_api_key"]
         assistant_id = st.secrets["amit_ass_id"]
-        st.title("Reshet Amit Bot")
+        st.title("עזים בקדושה - שאלות ותשובות")
     
     st.markdown(f"#### by [Yedidya Harris](https://www.linkedin.com/in/yedidya-harris/), 01/2024")
     # add divider
