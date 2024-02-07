@@ -43,8 +43,8 @@ else:
     # Set openAi client, assistant ai and assistant ai thread
     @st.cache_resource
     def load_openai_client_and_assistant():
-        client = OpenAI(api_key=api_key)
-        my_assistant = client.beta.assistants.retrieve(assistant_id)
+        client = OpenAI(api_key=st.session_state.api_key)
+        my_assistant = client.beta.assistants.retrieve(st.session_state.assistant_id)
         thread = client.beta.threads.create()
 
         return client, my_assistant, thread
