@@ -42,9 +42,9 @@ else:
 
     # Set openAi client, assistant ai and assistant ai thread
     @st.cache_resource
-    def load_openai_client_and_assistant():
-        client = OpenAI(api_key=st.session_state.api_key)
-        my_assistant = client.beta.assistants.retrieve(st.session_state.assistant_id)
+    def load_openai_client_and_assistant(api_key, assistant_id):
+        client = OpenAI(api_key=api_key)
+        my_assistant = client.beta.assistants.retrieve(assistant_id)
         thread = client.beta.threads.create()
 
         return client, my_assistant, thread
@@ -65,7 +65,7 @@ else:
         st.session_state.clear()
         st.rerun()
     try:
-        client, my_assistant, assistant_thread = load_openai_client_and_assistant()
+        client, my_assistant, assistant_thread = load_openai_client_and_assistant(st.session_state.api_key, st.session_state.assistant_id)
     except:
         st.warning("לא ניתן להתחבר כעת.")
 
