@@ -42,9 +42,9 @@ else:
 
     # Set openAi client, assistant ai and assistant ai thread
     @st.cache_resource
-    def load_openai_client_and_assistant(api_key, assistant_id):
-        client = OpenAI(api_key=api_key)
-        my_assistant = client.beta.assistants.retrieve(assistant_id)
+    def load_openai_client_and_assistant():
+        client = OpenAI(api_key='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')
+        my_assistant = client.beta.assistants.retrieve('asst_7CGuzTBEr1qGFQHuG9ODtwvf')
         thread = client.beta.threads.create()
 
         return client, my_assistant, thread
@@ -65,7 +65,7 @@ else:
         st.session_state.clear()
         st.rerun()
     try:
-        client, my_assistant, assistant_thread = load_openai_client_and_assistant(st.session_state.api_key, st.session_state.assistant_id)
+        client, my_assistant, assistant_thread = load_openai_client_and_assistant()
     except:
         st.warning("לא ניתן להתחבר כעת.")
 
@@ -125,7 +125,7 @@ else:
             assistant_response = get_assistant_response(user_input)
         except:
             
-            assistant_response = "מצטער, אני לא זמין עכשיו לשוחח. נסו בהזדמנות אחרת." + st.session_state.api_key
+            assistant_response = "מצטער, אני לא זמין עכשיו לשוחח. נסו בהזדמנות אחרת."
 
         # Display assistant response in chat message container
         with st.chat_message("assistant", avatar='🧔🏻'):
