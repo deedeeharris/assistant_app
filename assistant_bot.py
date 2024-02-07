@@ -5,9 +5,7 @@ from openai import OpenAI
 
 st.set_page_config(page_title='Chat by Yedidya', page_icon="💬")
 
-# Initialize password_attempt in session state
-if 'password_attempt' not in st.session_state:
-    st.session_state.password_attempt = None
+
 if 'api_key' not in st.session_state:
     st.session_state.api_key = None
 if 'assistant_id' not in st.session_state:
@@ -21,7 +19,6 @@ if 'login_status' not in st.session_state:
 
 # Display login page if not logged in
 if not st.session_state.login_status:
-    password_attempt = st.text_input("Enter Password:", type="password")
     api_key = st.text_input("Enter API Key:")
     assistant_id = st.text_input("Enter Assistant ID:")
     title = st.text_input("Enter Title:")
@@ -30,14 +27,12 @@ if not st.session_state.login_status:
     if login_button: 
         # Set login status to True
         st.session_state.login_status = True
-        st.session_state.password_attempt = password_attempt
         st.session_state.api_key = api_key
         st.session_state.assistant_id = assistant_id
         st.session_state.title = title
         st.rerun()
 else:
     # App title with creator's name and LinkedIn link
-    password_attempt = st.session_state.password_attempt
     api_key = st.session_state.api_key
     assistant_id = st.session_state.assistant_id
     title = st.session_state.title
