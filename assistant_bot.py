@@ -28,14 +28,13 @@ if not st.session_state.login_status:
     login_button = st.button("Login")
 
     if login_button: 
-        if password_attempt == st.secrets["amit_pass"] or password_attempt == st.secrets["mil_pass"]:
-            # Set login status to True
-            st.session_state.login_status = True
-            st.session_state.password_attempt = password_attempt
-            st.session_state.api_key = api_key
-            st.session_state.assistant_id = assistant_id
-            st.session_state.title = title
-            st.rerun()
+        # Set login status to True
+        st.session_state.login_status = True
+        st.session_state.password_attempt = password_attempt
+        st.session_state.api_key = api_key
+        st.session_state.assistant_id = assistant_id
+        st.session_state.title = title
+        st.rerun()
 else:
     # App title with creator's name and LinkedIn link
     password_attempt = st.session_state.password_attempt
