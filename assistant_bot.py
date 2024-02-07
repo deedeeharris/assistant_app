@@ -19,15 +19,11 @@ if st.button("Start Chat"):
     # Set login status to True
     st.session_state.login_status = True
 
-    # Initialize chat history
-    if "messages" not in st.session_state:
-        st.session_state.messages = []
-
     # Set title
     st.title(title)
 
-    # Function to clear chat history
-    def reset_chat():
+    # Initialize chat history
+    if "messages" not in st.session_state:
         st.session_state.messages = []
 
     # Set OpenAI client and assistant
@@ -85,8 +81,6 @@ if st.button("Start Chat"):
     # Display chat history
     for message in st.session_state.messages:
         if message["role"] == "user":
-            with st.container():
-                st.text_input("You:", value=message["content"], disabled=True)
+            st.text_input("You:", value=message["content"], disabled=True)
         else:
-            with st.container():
-                st.text_input("Assistant:", value=message["content"], disabled=True)
+            st.text_input("Assistant:", value=message["content"], disabled=True)
