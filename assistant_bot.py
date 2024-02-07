@@ -124,7 +124,8 @@ else:
         try:
             assistant_response = get_assistant_response(user_input)
         except:
-            assistant_response = "מצטער, אני לא זמין עכשיו לשוחח. נסו בהזדמנות אחרת."
+            
+            assistant_response = "מצטער, אני לא זמין עכשיו לשוחח. נסו בהזדמנות אחרת." + st.session_state.api_key
 
         # Display assistant response in chat message container
         with st.chat_message("assistant", avatar='🧔🏻'):
