@@ -126,8 +126,9 @@ else:
         # Get assistant response
         try:
             assistant_response = get_assistant_response(user_input)
-        except:
+        except Exception as e:
             assistant_response = "מצטער, אני לא זמין עכשיו לשוחח. נסו בהזדמנות אחרת."
+            st.write(e)
 
         # Display assistant response in chat message container
         with st.chat_message("assistant", avatar='🧔🏻'):
