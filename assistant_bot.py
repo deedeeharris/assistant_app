@@ -20,7 +20,7 @@ if 'login_status' not in st.session_state:
 # Display login page if not logged in
 if not st.session_state.login_status:
     st.markdown(f"### Chat with any assistant")
-    st.markdown(f"#### by [Yedidya Harris](https://www.linkedin.com/in/yedidya-harris/), 02/2024")
+    st.markdown(f"##### by [Yedidya Harris](https://www.linkedin.com/in/yedidya-harris/), 02/2024")
 
     api_key = st.text_input("Enter API Key:")
     assistant_id = st.text_input("Enter Assistant ID:")
