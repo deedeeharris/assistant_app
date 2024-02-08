@@ -3,7 +3,7 @@ import streamlit as st
 import time
 from openai import OpenAI
 
-st.set_page_config(page_title='Chat by Yedidya', page_icon="💬")
+st.set_page_config(page_title='Chat with any assistant by Yedidya', page_icon="💬")
 
 
 if 'api_key' not in st.session_state:
@@ -39,7 +39,7 @@ else:
     st.title(title)
 
     
-    st.markdown(f"#### by [Yedidya Harris](https://www.linkedin.com/in/yedidya-harris/), 01/2024")
+    st.markdown(f"#### by [Yedidya Harris](https://www.linkedin.com/in/yedidya-harris/), 02/2024")
     # add divider
     st.markdown("---")
 
