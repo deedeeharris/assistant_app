@@ -47,7 +47,7 @@ else:
     st.markdown("---")
 
     # Set openAi client, assistant ai and assistant ai thread
-    @st.cache_resource
+
     def load_openai_client_and_assistant():
         client = OpenAI(api_key=api_key)
         my_assistant = client.beta.assistants.retrieve(assistant_id)
